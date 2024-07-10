@@ -1,19 +1,29 @@
 <template>
-  <the-header>
-    <template #logoSvg>
-      <font-awesome-icon class="w-full h-full" icon="fa-brands fa-github" />
-    </template>
-  </the-header>
-  <base-banner :title="titleText" urlImage="./person.jpg"></base-banner>
-  <router-view></router-view>
+  <header>
+    <the-header>
+      <template #logoSvg>
+        <font-awesome-icon class="w-full h-full" icon="fa-brands fa-github" />
+      </template>
+    </the-header>
+  </header>
+  <main>
+    <router-view></router-view>
+  </main>
+  <footer>
+    <the-footer :title="storedResources[0].title" :author="storedResources[0].author">
+      <template #logoSvg>
+        <font-awesome-icon class="w-full h-full" icon="fa-brands fa-github" />
+      </template>
+    </the-footer>
+  </footer>
 </template>
 <script>
+import TheFooter from './components/layout/TheFooter.vue';
 import TheHeader from "./components/layout/TheHeader.vue";
-import BaseBanner from "./components/base/BaseBanner.vue";
 export default {
   components: {
     TheHeader,
-    BaseBanner,
+    TheFooter
   },
   data() {
     return {
@@ -47,11 +57,6 @@ export default {
         },
       ],
     };
-  },
-  computed: {
-    titleText() {
-      return "Design plan for arranging elements is such a way as best to accomplish a paticular purpose";
-    },
   },
 
   provide() {

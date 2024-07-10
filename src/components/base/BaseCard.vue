@@ -1,5 +1,5 @@
 <template>
-  <router-link>
+  <router-link :to="'/blog/'+ id">
     <div
       class="h-[40vh] w-full overflow-hidden grid grid-rows-2 bg-white dark:bg-black rounded-lg shadow-md"
     >
@@ -35,9 +35,7 @@
 export default {
   props: ["urlImage", "title", "description", "author", "date", "id"],
   computed: {
-    backgroundImage() {
-      return;
-    },
+    
   },
 };
 </script>

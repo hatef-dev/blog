@@ -5,7 +5,7 @@
     >
       <!-- logo with image and svg -->
       <div>
-        <div v-if="$slots.logoPng" class="">
+        <div v-if="$slots.logoPng" class="w-12 h-12">
           <slot name="logoPng"> </slot>
         </div>
         <div v-if="$slots.logoSvg" class="w-12 h-12">
