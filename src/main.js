@@ -1,5 +1,5 @@
 import { createApp } from 'vue'
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter,createWebHashHistory,createWebHistory } from 'vue-router'
 import './style.css'
 import App from './App.vue'
 import Icons from './fontAwesomeIcons'
@@ -10,7 +10,7 @@ import TheMainPage from './components/layout/TheMainPage.vue'
 import TheContentPage from './components/layout/TheContentPage.vue'
 const app = createApp(App)
 const router = createRouter({
-    history: createWebHistory(),
+    history:createWebHashHistory(),
     routes: [
         { path:'/', redirect:'/blog' },
         { path:'/blog' , component: TheMainPage, name: 'blog-page' },
